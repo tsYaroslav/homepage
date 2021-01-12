@@ -1,0 +1,498 @@
+* {
+    font: 400 16px/28px 'Open Sans', Helvetica, sans-serif;  
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: #65BBF2;
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #65BBF2;
+  }
+
+body {
+    background: #fff;  
+    text-align: center;  
+    padding: 0;
+    margin: 0;      
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font: 700 24px/34px 'Open Sans', sans-serif;  
+    color: #404040;          
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16.67px;
+}
+
+blockquote {
+    font: italic 300 18px/24px 'Open Sans', sans-serif;   
+}
+
+p {
+    font-size: 16.67px;
+    text-indent: 10px;
+}
+
+li p {
+    text-indent: 0;
+}
+
+
+
+@keyframes timelineCircleScale {
+    0% {transform: scale(1)  }
+    40% { transform: scale(1.7) }
+    100% { transform: scale(1.3) }
+}
+
+article {
+    position: relative;
+}
+
+.sidebar {
+    position: sticky;
+    display: inline-block;
+    top: 170px;
+    padding-right: 40px;
+    transform: translateX(calc(-100% - 30px));
+    height: 65px;
+    overflow: hidden;
+    float: left;  
+}
+
+.sidebar-h2 {
+    transform: translateY(101px);
+    transition: .2s;
+    width: 100%;
+    max-width: 150px;
+    margin-top: 7px;
+    text-overflow: ellipsis; 
+    line-height: 20px;
+    text-align: right;
+    opacity: 0;  
+    color: #65BBF2;     
+}
+
+.sidebar-h2.visible {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: .2s;
+}
+
+.sidebar .darkModeToggler {
+   width: 33px;
+   height: 33px; 
+   position: absolute;
+   right: 0;   
+   top: 0px;   
+}
+
+.sidebar .darkModeToggler *:hover {
+    cursor: pointer;
+}
+
+label{
+    position:absolute;
+    left:50%;
+    top:50%;
+    --c:translate(-50%,-50%);
+    transform:var(--c);
+  }
+  
+  .switch{
+    position:relative;
+    left:0;top:0;
+    width:25px;
+    height:25px;
+  }
+  
+  .darkModeToggler label > input{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:5;
+    opacity:0;
+  }
+  
+  .darkModeToggler .switch span{
+    display:block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:var(--c);
+    border-radius:50%;
+    width:70%;
+    height:70%;
+    background:#FFAC33;
+    border:5px solid white;
+    transition:all ease 0.15s;
+  }
+  
+  .darkModeToggler .switch div{
+    position:absolute;
+    left:0;top:0;
+    width:100%;
+    height:100%;
+  }
+  
+  .darkModeToggler .switch div::before, 
+  .darkModeToggler .switch div::after{
+    content:" ";
+    display:block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:var(--c);
+    background:#65BBF2;
+    width:12%;
+    height:130%;
+    border-radius:10px;
+    transition:all ease 0.15s;
+  }
+  
+  .darkModeToggler .switch div:nth-child(1)::before{
+    transform:var(--c) rotate(0deg);
+  }
+  
+  .darkModeToggler .switch div:nth-child(1)::after{
+    transform:var(--c) rotate(45deg); /*45deg increment each time*/
+  }
+  
+.darkModeToggler .switch div:nth-child(2)::before{
+    transform:var(--c) rotate(90deg);
+  }
+  
+.darkModeToggler .switch div:nth-child(2)::after{
+    transform:var(--c) rotate(135deg);
+  }
+  
+.darkModeToggler .switch::before, .switch::after{
+    content:" ";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:var(--c);
+    border-radius:50%;
+    background:white;
+    transition:all ease 0.15s;
+  }
+  
+  .darkModeToggler  .switch::before{
+    width:0%;
+    height:0%;
+    z-index:10;
+  }
+  
+.darkModeToggler  .switch::after{
+    width:50%;
+    height:50%;
+  }
+  
+.darkModeToggler  input:checked ~ .switch span{
+      width:100%; /*width change*/
+      height:100%; /*height change*/
+      background:#65BBF2; /*color change*/
+      /*we get a full moon*/
+  }
+  
+.darkModeToggler  input:checked ~ .switch div::before,
+  input:checked ~ .switch div::after{
+      height:50%; /*we hide the sun-rays*/
+  }
+  
+.darkModeToggler  input:checked ~ .switch::before{ /*we draw a white circle a left-top corner to show a half moon*/
+      left:30%;
+      top:30%;
+      width:62%;
+      height:80%;
+  }
+  
+.darkModeToggler  input:checked ~ .switch::after{ /*we hide the sun outline*/
+      width:0%;
+      height:0%;
+  }
+  
+.darkModeToggler  input:not(:checked) ~ .switch{
+      transform:rotate(180deg);
+      transition:all ease 2.15s 0.1s;
+  }
+
+main {
+    display: inline-block; 
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;  
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.intro {
+    display: inline-block;
+    width: 100%;
+}
+
+.intro-avatar {
+    display: inline-block;
+    width: 160px;
+    float: left;
+    padding: 10px;
+    margin-right: 10px;
+    background: linear-gradient(217deg, #81c8f5, rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, #1899e9, rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, #86bddd, rgba(0,0,255,0) 70.71%);
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.intro-avatar:hover {
+    background: linear-gradient(217deg, #81c8f5, rgba(255,0,0,0) 70.71%),
+                linear-gradient(336deg, #86bddd, rgba(0,0,255,0) 70.71%),
+                linear-gradient(127deg, #1899e9, rgba(0,255,0,0) 70.71%);
+    box-shadow: 0px 0px 5px 3px #e3e3e3;   
+    transition: .2s;
+}
+
+.avatar {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+}
+
+.intro-header {
+    display: inline-block;
+    width: calc(100% - 170px);    
+}
+
+.intro-content {
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.twitter svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    float: left;
+    position: relative;
+    top: 3px;
+}
+
+.twitter a {
+    text-decoration: none;
+    color: #949393;
+    transition: .15s;
+    display: inline-block;
+    line-height: 18px;
+}
+
+.twitter a:hover {
+    color: #65BBF2;
+    transition: .15s;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section p {
+    margin-bottom: 10px;
+}
+
+.section-title {
+    padding: 5px 10px;
+    background: linear-gradient(to right, #65BBF2 0%, transparent 100%);
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 10px;  
+}
+
+.timeline {
+    padding: 0 10px;
+}
+
+.timeline-ul {
+    margin-left: 25px;
+}
+
+.timeline-ul li {
+    position: relative;
+    margin: 10px 0;    
+}
+
+.timeline .timeline-title {
+    display: inline-block;
+}
+
+.timeline .timeline-title:after {
+    content: "";
+    display: block;
+    width: 0%;
+    background: #070707;
+    height: 1px;
+    transition: .25s;
+}
+
+.timeline:hover .timeline-title:after {
+    width: 100%;
+    transition: .2s;
+}
+
+.timeline-ul li:before,
+.timeline-ul li:after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 50px;
+    background: #e3e3e3;
+    margin: 0;  
+    position: absolute;
+    height: 100%;
+    top: 20px;
+    left: -20px;
+}
+
+.timeline-ul li:after {
+    height: 12px;
+    width: 12px;
+    background: #65BBF2;
+    top: 9px;
+    left: -25px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: .2s;
+}
+
+.timeline-ul li:hover:before {
+    background: #65BBF2;
+    transition: .2s;
+}
+
+.timeline-ul li:hover:after {
+    background: #65BBF2;
+    animation: timelineCircleScale .5s;
+    transform: scale(1.3);
+    transition: .2s;
+} 
+
+.timeline-date {
+    position: relative;
+    padding: 2px 5px; 
+    transition: .2s;
+    left: -4px;
+    margin-right: -4px;            
+}
+
+.timeline-ul li .timeline-date:before {
+    content: "";
+    width: 0;
+    display: inline-block;
+    position: absolute;
+    top: 1px;     
+    left: 0px;
+    height: 100%;
+    background: #65BBF2;    
+    transition: .2s;
+    z-index: -1;
+}
+
+.timeline-ul li:hover .timeline-date:before {
+    width: 100%;
+    transition: .2s;
+}
+
+.timeline-ul li:hover .timeline-date {
+    color: #fff;
+    transition: .2s;
+}
+
+.timeline-ul li:last-child:before,
+.timeline-ul li:only-child:before {
+    display: none;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+.end p {
+    font: italic 100 15px/20px 'Open Sans', sans-serif;       
+    text-align: center;         
+}
+
+@media screen and (max-width: 1220px) {
+    .sidebar-h2 {
+        display: none;  
+    }
+}
+
+@media screen and (max-width: 992px) {
+    * { text-align: justify;}
+
+    main {
+        padding: 40px 20px; 
+    }
+    .intro-avatar {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+
+    .sidebar {
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        transform: translateX(0%);
+        top: initial;
+        height: 50px;
+        width: 100%;
+        padding: 0;
+        background: #ffffff;
+        /* backdrop-filter: blur(5px); */
+        z-index: 999;
+        border-top: 2px solid #e3e3e3;
+    }
+
+    .sidebar .darkModeToggler {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+ 
+    .intro-header {
+        width: 100%;
+        text-align: center;   
+    }
+    .intro-header * {
+        text-align: center;
+    }
+
+    .timeline-ul li .timeline-date:before {
+        width: 100%;
+    }
+    .timeline-ul li .timeline-date {
+        color: #ffffff;
+    }
+    
+
+}
