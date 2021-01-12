@@ -7,7 +7,7 @@
     background: #65BBF2;
   }
   
-  ::selection {
+::selection {
     color: #fff;
     background: #65BBF2;
   }
@@ -50,6 +50,37 @@ p {
 li p {
     text-indent: 0;
 }
+
+/* Preloader */
+.dark-mode .preloader-w {
+    background: #15202b; 
+}
+  
+.preloader-w {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1001; }
+  
+  .preloader-item {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  
+  .loaded-hiding .preloader-w {
+    transition: .5s opacity;
+    opacity: 0; }
+  
+  .loaded .preloader-w {
+    display: none; }
+/* Preloader END */  
 
 
 
@@ -452,11 +483,11 @@ body.dark-mode {
 .dark-mode .darkModeToggler .switch span {
     border-color: #15202b; 
 }
-
 .dark-mode .darkModeToggler .switch::before, 
 .dark-mode .switch::after {
     background: #15202b;
 }
+/* Dark mode END*/
 
 @media screen and (max-width: 1220px) {
     .sidebar-h2 {
