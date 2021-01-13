@@ -147,6 +147,8 @@ label{
     top:50%;
     --c:translate(-50%,-50%);
     transform:var(--c);
+    font-size: 0;
+    line-height: 0px;  
   }
   
   .switch{
@@ -305,21 +307,21 @@ main {
     width: 160px;
     float: left;
     padding: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
     background: linear-gradient(217deg, #81c8f5, rgba(255,0,0,0) 70.71%),
                 linear-gradient(127deg, #1899e9, rgba(0,255,0,0) 70.71%),
-                linear-gradient(336deg, #86bddd, rgba(0,0,255,0) 70.71%);
+                linear-gradient(356deg, #86bddd, rgba(0,0,255,0) 70.71%);
     border-radius: 50%;
     transition: .2s;
 }
 
-.intro-avatar:hover {
+/* .intro-avatar:hover {
     background: linear-gradient(217deg, #81c8f5, rgba(255,0,0,0) 70.71%),
                 linear-gradient(336deg, #86bddd, rgba(0,0,255,0) 70.71%),
                 linear-gradient(127deg, #1899e9, rgba(0,255,0,0) 70.71%);
     box-shadow: 0px 0px 5px 3px #e3e3e3;   
     transition: .2s;
-}
+} */
 
 .avatar {
     width: 150px;
@@ -330,7 +332,11 @@ main {
 
 .intro-header {
     display: inline-block;
-    width: calc(100% - 170px);    
+    width: calc(100% - 180px);    
+}
+
+.intro-header .social {
+    margin-bottom: 15px;
 }
 
 .intro-content {
@@ -385,14 +391,15 @@ main {
 
 .timeline .timeline-title {
     display: inline-block;
+    color: #65BBF2;
 }
 
 .timeline .timeline-title:after {
     content: "";
     display: block;
     width: 0%;
-    background: #070707;
-    height: 1px;
+    background: #65BBF2;
+    height: 2px;
     transition: .25s;
 }
 
@@ -478,9 +485,9 @@ main {
 .video {
     width: 100%;
     height: auto;
+    min-height: 480px;
     border-radius: 4px;
 }
-
 
 .end p {
     font: italic 100 15px/20px 'Open Sans', sans-serif;       
@@ -495,6 +502,24 @@ body.dark-mode {
 
 .dark-mode * {
     color: #fff;
+}
+
+.dark-mode .sidebar-h2 {
+    color: #65BBF2;
+}
+
+.dark-mode .timeline-title {
+    color: #ffffff;
+}
+
+.dark-mode .timeline-title:after {
+    background: #ffffff;
+}
+
+.dark-mode .twitter a:hover span, 
+.dark-mode .twitter a:hover svg {
+    color: #65BBF2;   
+    fill: #65BBF2;
 }
 
 .dark-mode .darkModeToggler .switch span {
