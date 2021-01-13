@@ -1,6 +1,6 @@
 'use strict'
 
-/* Show/hide <h1> at sticky sidebar */
+/*  Show/hide <h1> at sticky sidebar  */
 const nav = document.querySelector('.sidebar');
 const navTop = nav.offsetTop + 40;
 
@@ -14,7 +14,7 @@ const stickyNavigation = () => {
 
 window.addEventListener('scroll', stickyNavigation);
 
-/* Dark mode */
+/*  Dark mode  */
 const body = document.querySelector("body");
 const darkModeToggler = document.querySelector(".darkModeToggler input");
 
@@ -34,27 +34,27 @@ body.classList.toggle("dark-mode");
   
 });
 
-/* preloader */
+/*  preloader  */
 body.classList.add('loaded-hiding');
 		window.setTimeout(function () {
 		  body.classList.add('loaded');
 		  body.classList.remove('loaded-hiding');
 }, 500);
 
-/* tweet sound on clicked twitter link */
+/*  tweet sound on clicked twitter link  */
 const audio1 = document.querySelector('.tweet-sound');
 const trigger1 = document.querySelector('.tweet-trigger');
 
 trigger1.addEventListener("click", (e) => {
   const href = trigger1.href;
-    /* prevent default link behavior for a while, to play a sound till the end */
+    /*  prevent default link behavior for a while, to play a sound till the end  */
     e.preventDefault();
     audio1.currentTime = 0;
     audio1.play();
     setTimeout(() => { window.location = href; }, 1000);
 });
 
-/* toggle sound on clicked dark mode toggler */
+/*  toggle sound on clicked dark mode toggler  */
 const audio2 = document.querySelector('.toggler-sound');
 const trigger2 = document.querySelector('.toggler-trigger');
 
