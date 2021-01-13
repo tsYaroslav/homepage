@@ -67,9 +67,6 @@ li p {
 }
 
 /*  Preloader  */
-.dark-mode .preloader-w {
-  background: #15202b;
-}
 
 .preloader-w {
   position: fixed;
@@ -79,6 +76,10 @@ li p {
   bottom: 0;
   background: #fff;
   z-index: 1001;
+}
+
+.dark-mode .preloader-w {
+  background: #15202b;
 }
 
 .preloader-item {
@@ -157,7 +158,6 @@ label {
   --c: translate(-50%, -50%);
 
   transform: var(--c);
-
   font-size: 0;
   line-height: 0;
 }
@@ -264,6 +264,11 @@ label {
 .darkModeToggler input:checked ~ .switch span::before,
 .darkModeToggler input:checked ~ .switch span::after {
   height: 50%;
+}
+
+.dark-mode .darkModeToggler .switch::before,
+.dark-mode .switch::after {
+  background: #15202b;
 }
 
 .darkModeToggler input:checked ~ .switch::before {
@@ -421,6 +426,10 @@ main {
   transition: 0.25s;
 }
 
+.dark-mode .timeline-title::after {
+  background: #fff;
+}
+
 .timeline:hover .timeline-title::after {
   width: 100%;
   transition: 0.2s;
@@ -517,12 +526,17 @@ section.end.section {
 }
 
 /*  Dark mode  */
-body.dark-mode {
-  background: #15202b;
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode .intro-header,
+.dark-mode .intro-header a {
+  color: #fff;
 }
 
-.dark-mode * {
-  color: #fff;
+body.dark-mode {
+  background: #15202b;
 }
 
 .dark-mode .sidebar-h2 {
@@ -533,8 +547,8 @@ body.dark-mode {
   color: #fff;
 }
 
-.dark-mode .timeline-title::after {
-  background: #fff;
+.dark-mode .darkModeToggler .switch span {
+  border-color: #15202b;
 }
 
 .dark-mode .twitter a:hover span,
@@ -542,15 +556,6 @@ body.dark-mode {
   color: #65bbf2;
   fill: #65bbf2;
   transition: 0.15s;
-}
-
-.dark-mode .darkModeToggler .switch span {
-  border-color: #15202b;
-}
-
-.dark-mode .darkModeToggler .switch::before,
-.dark-mode .switch::after {
-  background: #15202b;
 }
 
 /*  Dark mode END */
