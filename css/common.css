@@ -265,7 +265,7 @@ label{
   }
   
 .darkModeToggler  input:not(:checked) ~ .switch{
-      transform:rotate(180deg);
+      /* transform:rotate(180deg); */
       transition:all ease 2.15s 0.1s;
   }
 /* Dark mode toggler */
@@ -360,6 +360,7 @@ main {
     transition: .15s;
     display: inline-block;
     line-height: 18px;
+    transition: .15s;
 }
 
 .twitter a:hover {
@@ -520,6 +521,7 @@ body.dark-mode {
 .dark-mode .twitter a:hover svg {
     color: #65BBF2;   
     fill: #65BBF2;
+    transition: .15s;
 }
 
 .dark-mode .darkModeToggler .switch span {
@@ -625,6 +627,10 @@ body.dark-mode {
     }
     .timeline-ul li .timeline-date {
         color: #ffffff;
+    }
+
+    .video {
+        min-height: 320px;
     }
     
 }

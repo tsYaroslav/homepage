@@ -42,14 +42,23 @@ body.classList.add('loaded-hiding');
 }, 500);
 
 /* tweet sound on clicked twitter link */
-const audio = document.querySelector('.tweet-sound');
-const tweetTrigger = document.querySelector('.tweet-trigger');
+const audio1 = document.querySelector('.tweet-sound');
+const trigger1 = document.querySelector('.tweet-trigger');
 
-tweetTrigger.addEventListener("click", (e) => {
-  const href = tweetTrigger.href;
+trigger1.addEventListener("click", (e) => {
+  const href = trigger1.href;
     /* prevent default link behavior for a while, to play a sound till the end */
     e.preventDefault();
-    audio.currentTime = 0;
-    audio.play();
+    audio1.currentTime = 0;
+    audio1.play();
     setTimeout(() => { window.location = href; }, 1000);
+});
+
+/* toggle sound on clicked dark mode toggler */
+const audio2 = document.querySelector('.toggler-sound');
+const trigger2 = document.querySelector('.toggler-trigger');
+
+trigger2.addEventListener("click", (e) => {
+    audio2.currentTime = 0;
+    audio2.play();
 });
