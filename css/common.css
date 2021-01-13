@@ -265,7 +265,6 @@ label{
   }
   
 .darkModeToggler  input:not(:checked) ~ .switch{
-      /* transform:rotate(180deg); */
       transition:all ease 2.15s 0.1s;
   }
 /* Dark mode toggler */
