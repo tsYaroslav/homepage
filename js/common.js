@@ -1,4 +1,5 @@
 'use strict'
+
 /* Show/hide <h1> at sticky sidebar */
 const nav = document.querySelector('.sidebar');
 const navTop = nav.offsetTop + 40;
@@ -12,7 +13,6 @@ const stickyNavigation = () => {
 }
 
 window.addEventListener('scroll', stickyNavigation);
-
 
 /* Dark mode */
 const body = document.querySelector("body");
@@ -40,3 +40,16 @@ body.classList.add('loaded-hiding');
 		  body.classList.add('loaded');
 		  body.classList.remove('loaded-hiding');
 }, 500);
+
+/* tweet sound on clicked twitter link */
+const audio = document.querySelector('.tweet-sound');
+const tweetTrigger = document.querySelector('.tweet-trigger');
+
+tweetTrigger.addEventListener("click", (e) => {
+  const href = tweetTrigger.href;
+    /* prevent default link behavior for a while, to play a sound till the end */
+    e.preventDefault();
+    audio.currentTime = 0;
+    audio.play();
+    setTimeout(() => { window.location = href; }, 1000);
+});
