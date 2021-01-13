@@ -1,3 +1,5 @@
+/* some basic typography presets */
+
 * {
     font: 400 16px/28px 'Open Sans', Helvetica, sans-serif;  
 }
@@ -49,6 +51,16 @@ p {
 
 li p {
     text-indent: 0;
+}
+
+.hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 /* Preloader */
