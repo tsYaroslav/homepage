@@ -490,6 +490,10 @@ main {
     border-radius: 4px;
 }
 
+section.end.section {
+    margin-bottom: 62px;    
+}
+
 .end p {
     font: italic 100 15px/20px 'Open Sans', sans-serif;       
     text-align: center;         
@@ -584,9 +588,9 @@ body.dark-mode {
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+        margin-bottom: 10px;    
     }
     
-
     .sidebar {
         position: fixed;
         bottom: 0px;
